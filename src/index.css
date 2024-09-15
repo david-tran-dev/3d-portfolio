@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #010103;
+  background-color: rgb(28, 28, 33);
   font-family: 'General Sans', sans-serif;
 }
 
@@ -105,7 +105,7 @@ body {
   }
 
   .work-canvas {
-    @apply col-span-1 border rounded-lg bg-black-200 border-black-300;
+    @apply min-h-[300px] col-span-1 border rounded-lg bg-black-200 border-black-300;
   }
 
   .work-content {

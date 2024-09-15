@@ -10,7 +10,7 @@ const WorkExperience = () => {
   const [animationName, setAnimationName] = useState('idle');
 
   return (
-    <section className="c-space my-20" id="work">
+    <section className="my-20 c-space" id="work">
       <div className="w-full text-white-600">
         <p className="head-text">My Work Experience</p>
 
@@ -23,7 +23,12 @@ const WorkExperience = () => {
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
+                <Developer
+                  position-y={-3}
+                  scale={3}
+                  animationName={animationName}
+                  rotation-x={0.2}
+                />
               </Suspense>
             </Canvas>
           </div>
@@ -34,12 +39,18 @@ const WorkExperience = () => {
                 <div
                   key={index}
                   onClick={() => setAnimationName(item.animation.toLowerCase())}
-                  onPointerOver={() => setAnimationName(item.animation.toLowerCase())}
+                  onPointerOver={() =>
+                    setAnimationName(item.animation.toLowerCase())
+                  }
                   onPointerOut={() => setAnimationName('idle')}
                   className="work-content_container group">
-                  <div className="flex flex-col h-full justify-start items-center py-2">
+                  <div className="flex flex-col items-center justify-start h-full py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
+                      <img
+                        className="object-cover object-left w-full h-full "
+                        src={item.icon}
+                        alt=""
+                      />
                     </div>
 
                     <div className="work-content_bar" />
@@ -47,10 +58,12 @@ const WorkExperience = () => {
 
                   <div className="sm:p-5 px-2.5 py-5">
                     <p className="font-bold text-white-800">{item.name}</p>
-                    <p className="text-sm mb-5">
+                    <p className="mb-5 text-sm">
                       {item.pos} -- <span>{item.duration}</span>
                     </p>
-                    <p className="group-hover:text-white transition-all ease-in-out duration-500">{item.title}</p>
+                    <p className="transition-all duration-500 ease-in-out group-hover:text-white">
+                      {item.title}
+                    </p>
                   </div>
                 </div>
               ))}
