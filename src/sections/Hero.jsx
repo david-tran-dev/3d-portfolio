@@ -39,7 +39,10 @@ const Hero = () => {
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
             <HeroCamera isMobile={isMobile}>
-              <ComputerDesk scale={sizes.deskScale} position={sizes.deskPosition} />
+              <ComputerDesk
+                scale={sizes.deskScale}
+                position={sizes.deskPosition}
+              />
             </HeroCamera>
 
             <group>
@@ -57,7 +60,11 @@ const Hero = () => {
 
       <div className="absolute left-0 right-0 z-10 w-full bottom-7 c-space">
         <a href="#about" className="w-fit">
-          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+          <Button
+            name="Let's work together"
+            isBeam
+            containerClass={`sm:w-fit w-full sm:min-w-96 ${isMobile && '!bg-black-200'}`}
+          />
         </a>
       </div>
     </section>

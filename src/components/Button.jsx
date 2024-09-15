@@ -1,6 +1,7 @@
-const Button = ({ name, isBeam = false, containerClass, ...props }) => {
+const Button = ({ name, isBeam = false, containerClass, as = 'button', href, ...props }) => {
+  const Tag = as ? as : 'button';
   return (
-    <button className={`btn ${containerClass}`} {...props}>
+    <Tag className={`btn ${containerClass}`} {...props} href={href}>
       {isBeam && (
         <span className="relative flex w-3 h-3">
           <span className="btn-ping"></span>
@@ -8,7 +9,7 @@ const Button = ({ name, isBeam = false, containerClass, ...props }) => {
         </span>
       )}
       {name}
-    </button>
+    </Tag>
   );
 };
 

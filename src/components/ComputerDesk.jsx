@@ -1,8 +1,8 @@
-import { useGLTF } from '@react-three/drei';
-import React, { useRef } from 'react';
+import { useGLTF, useVideoTexture } from '@react-three/drei';
 
 const ComputerDesk = (props) => {
   const { nodes, materials } = useGLTF('/models/computer301.glb');
+  const vscodeTxt = useVideoTexture('/textures/desk/vscode.mp4');
   return (
     <group {...props} dispose={null}>
       <group position={[-6.536, 12.489, 2.269]} rotation={[0, -0.234, 0]} scale={[0.423, 1.152, 1.229]}>
@@ -61,8 +61,9 @@ const ComputerDesk = (props) => {
         material={materials['1PIC-0']}
         position={[0.003, 12.534, 0.217]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[1.822, 1.36, 0.851]}
-      />
+        scale={[1.822, 1.36, 0.851]}>
+        <meshBasicMaterial map={vscodeTxt} toneMapped={false} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -70,8 +71,9 @@ const ComputerDesk = (props) => {
         material={materials['2PIC-0']}
         position={[0.005, 15.335, -0.315]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={[3.094, 1.36, 1.449]}
-      />
+        scale={[3.094, 1.36, 1.449]}>
+        <meshBasicMaterial map={vscodeTxt} toneMapped={false} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -141,8 +143,9 @@ const ComputerDesk = (props) => {
         material={materials['3PIC-0']}
         position={[-3.62, 12.534, 1.082]}
         rotation={[Math.PI / 2, 0, -0.46]}
-        scale={[1.822, 1.36, 0.851]}
-      />
+        scale={[1.822, 1.36, 0.851]}>
+        <meshBasicMaterial map={vscodeTxt} toneMapped={false} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -150,8 +153,9 @@ const ComputerDesk = (props) => {
         material={materials['4PIC-0']}
         position={[3.603, 12.534, 1.074]}
         rotation={[Math.PI / 2, 0, 0.468]}
-        scale={[1.822, 1.36, 0.851]}
-      />
+        scale={[1.822, 1.36, 0.851]}>
+        <meshBasicMaterial map={vscodeTxt} toneMapped={false} />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
