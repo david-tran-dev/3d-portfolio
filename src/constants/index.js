@@ -60,13 +60,13 @@ export const myProjects = [
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'Ovol - Explore Paragliding Sites',
+    desc: 'Ovol is a project that aims to catalog mountain hiking trails where the descent is done by paragliding. This is our first project as part of a training program, developed using React for the frontend and Node.js for the backend. The goal is to combine outdoor adventure with modern technology, offering users a unique and exciting way to explore mountain trails.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
+      'This site allows users to explore and list paragliding spots, providing detailed information on takeoff locations. You can create, modify, and update routes, while accessing real-time weather and wind conditions. All of this is displayed on an interactive map, helping you determine whether the wind conditions are favorable for paragliding. The platform ensures you have all the necessary details for a safe and enjoyable experience.',
+    href: 'https://ovol-front.vercel.app/',
+    texture: '/textures/project/ovol_project.mp4',
+    logo: '/assets/ovol_logo.png',
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
@@ -80,16 +80,6 @@ export const myProjects = [
         path: '/assets/react.svg',
       },
       {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
         id: 4,
         name: 'Framer Motion',
         path: '/assets/framer.png',
@@ -101,7 +91,7 @@ export const myProjects = [
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
     deskScale: isSmall ? 0.4 : isMobile ? 0.6 : 0.8,
-    deskPosition: isMobile ? [0, -9, 0] : [0, -12, 0],
+    deskPosition: isSmall ? [0, -7, 0] : isMobile ? [0, -9, 0] : [0, -12, 0],
     cubePosition: isSmall
       ? [3, 0.5, 0]
       : isMobile

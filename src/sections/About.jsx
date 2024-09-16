@@ -3,9 +3,12 @@ import Globe from 'react-globe.gl';
 
 import Button from '../components/Button.jsx';
 import { toast } from 'sonner';
+import { useMediaQuery } from 'react-responsive';
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
+
+  const isSmall = useMediaQuery({ maxWidth: 440 });
 
   const handleCopy = () => {
     navigator.clipboard.writeText('david.tran.devweb@gmail.com');
@@ -17,7 +20,7 @@ const About = () => {
   };
 
   return (
-    <section className="my-20 c-space" id="about">
+    <section className={`my-20 c-space ${isSmall && 'mt-0'}`} id="about">
       <div className="grid h-full grid-cols-1 gap-5 xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
