@@ -23,7 +23,9 @@ const Hero = () => {
   const sizes = calculateSizes(isSmall, isMobile, isTablet);
 
   return (
-    <section className="relative flex flex-col w-full min-h-screen" id="home">
+    <section
+      className={`relative flex flex-col w-full  ${isSmall ? 'min-h-[80vh]' : 'min-h-screen'}`}
+      id="home">
       <div className="flex flex-col w-full gap-3 mx-auto mt-20 sm:mt-36 c-space">
         <p className="text-xl font-medium text-center text-white sm:text-3xl font-generalsans">
           Hi, I am David <span className="waving-hand">👋</span>
@@ -58,7 +60,8 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <div className="absolute left-0 right-0 z-10 w-full bottom-7 c-space">
+      <div
+        className={`absolute left-0 right-0 z-10 w-full ${isSmall ? 'bottom-16' : 'bottom-7'} c-space`}>
         <a href="#about" className="w-fit">
           <Button
             name="Let's work together"
