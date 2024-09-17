@@ -2,31 +2,120 @@ import { useGLTF, useVideoTexture } from '@react-three/drei';
 
 const ComputerDesk = (props) => {
   const { nodes, materials } = useGLTF('/models/computer301.glb');
-  const vscodeTxt = useVideoTexture('/textures/desk/vscode.mp4');
+
+  const options = {
+    // unsuspend: "canplay",
+    crossOrigin: 'Anonymous',
+    muted: true,
+    loop: true,
+    playsInline: true,
+  };
+  const vscodeTxt = useVideoTexture('/textures/desk/vscode.mp4', options);
+
   return (
     <group {...props} dispose={null}>
-      <group position={[-6.536, 12.489, 2.269]} rotation={[0, -0.234, 0]} scale={[0.423, 1.152, 1.229]}>
-        <mesh castShadow receiveShadow geometry={nodes.Object_4.geometry} material={materials['1COMP-CASE-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_5.geometry} material={materials['COMP-BACK-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_6.geometry} material={materials['COMP-FRONT-0']} />
+      <group
+        position={[-6.536, 12.489, 2.269]}
+        rotation={[0, -0.234, 0]}
+        scale={[0.423, 1.152, 1.229]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_4.geometry}
+          material={materials['1COMP-CASE-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_5.geometry}
+          material={materials['COMP-BACK-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_6.geometry}
+          material={materials['COMP-FRONT-0']}
+        />
       </group>
-      <group position={[6.27, 12.359, 1.926]} rotation={[0, -0.557, 0]} scale={[0.608, 1.031, 0.586]}>
-        <mesh castShadow receiveShadow geometry={nodes.Object_32.geometry} material={materials['1SPEAKER-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_33.geometry} material={materials['SPEAKER-FRONT-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_34.geometry} material={materials['SPEAKER1-0']} />
+      <group
+        position={[6.27, 12.359, 1.926]}
+        rotation={[0, -0.557, 0]}
+        scale={[0.608, 1.031, 0.586]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_32.geometry}
+          material={materials['1SPEAKER-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_33.geometry}
+          material={materials['SPEAKER-FRONT-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_34.geometry}
+          material={materials['SPEAKER1-0']}
+        />
       </group>
-      <group position={[-4.882, 9.825, 1.297]} rotation={[0, 0.654, 0]} scale={[0.608, 1.031, 0.586]}>
-        <mesh castShadow receiveShadow geometry={nodes.Object_36.geometry} material={materials['1SPEAKER-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_37.geometry} material={materials['SPEAKER-FRONT-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_38.geometry} material={materials['SPEAKER1-0']} />
+      <group
+        position={[-4.882, 9.825, 1.297]}
+        rotation={[0, 0.654, 0]}
+        scale={[0.608, 1.031, 0.586]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_36.geometry}
+          material={materials['1SPEAKER-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_37.geometry}
+          material={materials['SPEAKER-FRONT-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_38.geometry}
+          material={materials['SPEAKER1-0']}
+        />
       </group>
-      <group position={[7.559, 10.458, 14.912]} rotation={[0, -0.829, 0]} scale={[1, 0.219, 1]}>
-        <mesh castShadow receiveShadow geometry={nodes.Object_44.geometry} material={materials['CHAIR-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_45.geometry} material={materials['1CHAIR-0']} />
+      <group
+        position={[7.559, 10.458, 14.912]}
+        rotation={[0, -0.829, 0]}
+        scale={[1, 0.219, 1]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_44.geometry}
+          material={materials['CHAIR-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_45.geometry}
+          material={materials['1CHAIR-0']}
+        />
       </group>
-      <group position={[4.995, 11.9, 2.587]} rotation={[0, -0.305, 0]} scale={[0.168, 0.54, 0.168]}>
-        <mesh castShadow receiveShadow geometry={nodes.Object_49.geometry} material={materials['BOTTLE-0']} />
-        <mesh castShadow receiveShadow geometry={nodes.Object_50.geometry} material={materials['MYBOTTLE-0']} />
+      <group
+        position={[4.995, 11.9, 2.587]}
+        rotation={[0, -0.305, 0]}
+        scale={[0.168, 0.54, 0.168]}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_49.geometry}
+          material={materials['BOTTLE-0']}
+        />
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Object_50.geometry}
+          material={materials['MYBOTTLE-0']}
+        />
       </group>
       <mesh
         castShadow
