@@ -15,7 +15,19 @@ import gsap from 'gsap';
 const IMacComputer = (props) => {
   const group = useRef();
   const { nodes, materials } = useGLTF('/models/imac_computer.glb');
-  const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/intermarche_project.mp4');
+
+  const options = {
+    // unsuspend: "canplay",
+    crossOrigin: 'Anonymous',
+    muted: true,
+    loop: true,
+    playsInline: true,
+  };
+
+  const txt = useVideoTexture(
+    props.texture ? props.texture : '/textures/project/intermarche_project.mp4',
+    options,
+  );
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {
@@ -28,8 +40,15 @@ const IMacComputer = (props) => {
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Sketchfab_Scene">
-        <group name="Sketchfab_model" rotation={[-Math.PI / 2, 0, 0]} scale={0.3} position={[0, 1.5, 0]}>
-          <group name="36c4387b55c2438bab3b403c5ed8a576fbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+        <group
+          name="Sketchfab_model"
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={0.3}
+          position={[0, 1.5, 0]}>
+          <group
+            name="36c4387b55c2438bab3b403c5ed8a576fbx"
+            rotation={[Math.PI / 2, 0, 0]}
+            scale={0.01}>
             <group name="Object_2">
               <group name="RootNode">
                 <group
@@ -72,7 +91,11 @@ const IMacComputer = (props) => {
                       receiveShadow
                       geometry={nodes.imac_screen_image_0.geometry}
                       material={materials.screen_image}>
-                      <meshBasicMaterial map={txt} toneMapped={false} side={THREE.DoubleSide} />
+                      <meshBasicMaterial
+                        map={txt}
+                        toneMapped={false}
+                        side={THREE.DoubleSide}
+                      />
                     </mesh>
                     <mesh
                       name="imac_metal_color_0"
