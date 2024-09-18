@@ -1,7 +1,10 @@
 import { useGLTF, useVideoTexture } from '@react-three/drei';
+import { useMediaQuery } from 'react-responsive';
 
 const ComputerDesk = (props) => {
   const { nodes, materials } = useGLTF('/models/computer301.glb');
+
+  const isSmall = useMediaQuery({ maxWidth: 440 });
 
   const options = {
     // unsuspend: "canplay",
@@ -10,7 +13,10 @@ const ComputerDesk = (props) => {
     loop: true,
     playsInline: true,
   };
-  const vscodeTxt = useVideoTexture('/textures/desk/vscode.mp4', options);
+  const vscodeTxt = useVideoTexture(
+    `/textures/desk/vscode${isSmall ? '_mobile' : ''}.mp4`,
+    options,
+  );
 
   return (
     <group {...props} dispose={null}>
