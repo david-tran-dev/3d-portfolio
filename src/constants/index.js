@@ -29,6 +29,7 @@ export const myProjects = [
       'Built as a unique e-commerce app with Next.js 14, Tailwind CSS, TypeScript, and Figma, Intermarché is designed for optimal performance and scalability.',
     href: 'https://www.intermarche.com/',
     texture: '/textures/project/intermarche_project.mp4',
+    textureMobile: '/textures/project/intermarche_project_mobile.mp4',
     logo: '/assets/intermarche-logo.webp',
     logoStyle: {
       backgroundColor: '#FFF',
@@ -66,6 +67,7 @@ export const myProjects = [
       'This site allows users to explore and list paragliding spots, providing detailed information on takeoff locations. You can create, modify, and update routes, while accessing real-time weather and wind conditions. All of this is displayed on an interactive map, helping you determine whether the wind conditions are favorable for paragliding. The platform ensures you have all the necessary details for a safe and enjoyable experience.',
     href: 'https://ovol-front.vercel.app/',
     texture: '/textures/project/ovol_project.mp4',
+    textureMobile: '/textures/project/ovol_project_mobile.mp4',
     logo: '/assets/ovol_logo.png',
     logoStyle: {
       backgroundColor: '#13202F',

@@ -7,11 +7,13 @@ import { Center, OrbitControls, Stars } from '@react-three/drei';
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import IMacComputer from '../components/IMacComputer.jsx';
+import { useMediaQuery } from 'react-responsive';
 
 const projectCount = myProjects.length;
 
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
+  const isSmall = useMediaQuery({ maxWidth: 440 });
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -111,7 +113,13 @@ const Projects = () => {
             <Center>
               <Suspense fallback={<CanvasLoader />}>
                 <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <IMacComputer texture={currentProject.texture} />
+                  <IMacComputer
+                    texture={
+                      isSmall
+                        ? currentProject.textureMobile
+                        : currentProject.texture
+                    }
+                  />
                 </group>
                 <Stars saturation={0} count={400} speed={0.5} />
                 {/* <color attach="background" args={['black']} /> */}
