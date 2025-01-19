@@ -88,6 +88,44 @@ export const myProjects = [
       },
     ],
   },
+  {
+    title: 'Crypto tracker - Cryptocurrency Site',
+    desc: 'A personal project built to learn and explore Vue.js, Vite, and Tailwind CSS. This application displays a list of cryptocurrencies and provides detailed pages with charts for each.',
+    subdesc:
+      'The site also features a dark/light theme for an enhanced user experience.',
+    href: 'https://crypto-tracker-david-dev.vercel.app/',
+    texture: '/textures/project/crypto-tracker.mp4',
+    textureMobile: '/textures/project/crypto-tracker.mp4',
+    logo: '/assets/ovol_logo.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
+      {
+        id: 1,
+        name: 'Vue.js',
+        path: '/assets/vue-logo.png',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
