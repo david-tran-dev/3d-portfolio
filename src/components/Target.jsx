@@ -5,9 +5,7 @@ import gsap from 'gsap';
 
 const Target = (props) => {
   const targetRef = useRef();
-  const { scene } = useGLTF(
-    'https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/target-stand/model.gltf',
-  );
+  const { scene } = useGLTF('/models/low_poly_gaming_desk/scene.gltf');
 
   useGSAP(() => {
     gsap.to(targetRef.current.position, {
